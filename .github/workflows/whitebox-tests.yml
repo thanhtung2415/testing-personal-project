@@ -1,0 +1,36 @@
+name: WhiteBox Jest Tests
+
+on:
+  push:
+    paths:
+      - '02-whitebox-testing/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/whitebox-tests.yml'
+  workflow_dispatch:
+
+jobs:
+  whitebox-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run whitebox tests
+        run: npm run test:whitebox
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: whitebox-coverage
+          path: coverage/whitebox
+
