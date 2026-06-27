@@ -1,0 +1,37 @@
+name: Restful-Booker API Tests
+
+on:
+  push:
+    paths:
+      - '04-api-testing-restful-booker/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - '.github/workflows/api-newman.yml'
+  workflow_dispatch:
+
+jobs:
+  api-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Newman API collection
+        run: npm run test:api
+
+      - name: Upload Newman report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: restful-booker-newman-report
+          path: 04-api-testing-restful-booker/postman/newman-report.json
+

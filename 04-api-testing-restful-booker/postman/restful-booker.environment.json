@@ -1,0 +1,24 @@
+{
+  "id": "7fb7d905-49f4-4a84-a1a6-c6e1b9c2f8a4",
+  "name": "Restful Booker Local",
+  "values": [
+    {
+      "key": "baseUrl",
+      "value": "https://restful-booker.herokuapp.com",
+      "enabled": true
+    },
+    {
+      "key": "token",
+      "value": "",
+      "enabled": true
+    },
+    {
+      "key": "bookingId",
+      "value": "",
+      "enabled": true
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_using": "Codex"
+}
+
