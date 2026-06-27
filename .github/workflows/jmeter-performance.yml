@@ -1,0 +1,53 @@
+name: JMeter Performance Tests
+
+on:
+  push:
+    paths:
+      - '06-performance-jmeter/**'
+      - '.github/workflows/jmeter-performance.yml'
+  workflow_dispatch:
+
+jobs:
+  jmeter:
+    runs-on: ubuntu-latest
+    env:
+      JMETER_VERSION: 5.6.3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Download Apache JMeter
+        run: |
+          curl -fsSL "https://archive.apache.org/dist/jmeter/binaries/apache-jmeter-${JMETER_VERSION}.tgz" -o apache-jmeter.tgz
+          tar -xzf apache-jmeter.tgz
+
+      - name: Run JMeter test plan
+        run: |
+          mkdir -p 06-performance-jmeter/results
+          "./apache-jmeter-${JMETER_VERSION}/bin/jmeter" \
+            -n \
+            -t 06-performance-jmeter/jmeter/restful-booker-load-test.jmx \
+            -l 06-performance-jmeter/results/results.jtl \
+            -e \
+            -o 06-performance-jmeter/results/html-report
+
+      - name: Upload JMeter report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jmeter-html-report
+          path: 06-performance-jmeter/results/html-report
+
+      - name: Upload JMeter raw results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jmeter-results-jtl
+          path: 06-performance-jmeter/results/results.jtl
+
