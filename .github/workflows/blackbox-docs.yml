@@ -1,0 +1,25 @@
+name: BlackBox Docs Check
+
+on:
+  push:
+    paths:
+      - '01-blackbox-testing/**'
+      - '.github/workflows/blackbox-docs.yml'
+  workflow_dispatch:
+
+jobs:
+  verify-blackbox-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify blackbox deliverables
+        run: |
+          test -f 01-blackbox-testing/README.md
+          test -f 01-blackbox-testing/test-cases.md
+          test -f 01-blackbox-testing/bug-report.md
+          grep -q "Equivalence Partitioning" 01-blackbox-testing/test-cases.md
+          grep -q "Boundary Value Analysis" 01-blackbox-testing/test-cases.md
+          grep -q "Decision Table" 01-blackbox-testing/test-cases.md
+

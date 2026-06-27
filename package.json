@@ -1,0 +1,23 @@
+{
+  "name": "software-testing-final-projects",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Individual software testing assignments: blackbox, whitebox, CI/CD, API, UI automation, and JMeter performance testing.",
+  "scripts": {
+    "test:whitebox": "jest --config 02-whitebox-testing/jest.config.cjs --coverage",
+    "test:swagstore": "jest --config 03-swagstore-cicd/jest.config.cjs",
+    "start:swagstore": "node 03-swagstore-cicd/src/server.js",
+    "test:api": "newman run 04-api-testing-restful-booker/postman/restful-booker.collection.json --reporters cli,json --reporter-json-export 04-api-testing-restful-booker/postman/newman-report.json",
+    "test:ui": "playwright test --config 05-ui-automation-orangehrm/playwright.config.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.3",
+    "jest": "^29.7.0",
+    "newman": "^6.2.1",
+    "supertest": "^7.0.0"
+  }
+}
+

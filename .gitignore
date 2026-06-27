@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+playwright-report/
+test-results/
+newman/
+*.log
+*.zip
+*.jtl
+06-performance-jmeter/results/
+04-api-testing-restful-booker/postman/newman-report.json
