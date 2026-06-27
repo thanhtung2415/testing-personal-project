@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SwagStore</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #17202a;
+        background: #f6f8fb;
+      }
+
+      main {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 32px 20px;
+      }
+
+      header {
+        margin-bottom: 24px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 36px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+      }
+
+      .card {
+        border: 1px solid #d8dee8;
+        border-radius: 8px;
+        background: #ffffff;
+        padding: 16px;
+      }
+
+      .price {
+        font-weight: 700;
+        color: #0b6bcb;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>SwagStore</h1>
+        <p>Small ecommerce demo for CI/CD, Jest testing, and deployment practice.</p>
+      </header>
+      <section class="grid" id="products"></section>
+    </main>
+    <script>
+      async function loadProducts() {
+        const response = await fetch('/api/products');
+        const data = await response.json();
+        const root = document.querySelector('#products');
+
+        root.innerHTML = data.products
+          .map(
+            (product) => `
+              <article class="card">
+                <h2>${product.name}</h2>
+                <p class="price">$${product.price}</p>
+                <p>Stock: ${product.stock}</p>
+              </article>
+            `
+          )
+          .join('');
+      }
+
+      loadProducts();
+    </script>
+  </body>
+</html>
+
