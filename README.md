@@ -46,6 +46,7 @@ Vietnamese step-by-step guide:
 - `docs/github-push-schedule.md`
 - `docs/verification-results.md`
 - `docs/rubric-alignment-r-clo1.md`
+- `docs/submission-evidence.md`
 
 Recommended order:
 
@@ -76,6 +77,17 @@ Railway option:
 
 Fill in these links after deployment:
 
-- GitHub repository:
-- GitHub Actions:
-- Render/Railway deployment:
+- GitHub repository: https://github.com/thanhtung2415/testing-personal-project
+- GitHub Actions: https://github.com/thanhtung2415/testing-personal-project/actions
+- Render/Railway deployment: pending setup in Render or Railway
+
+## Verified GitHub Actions Runs
+
+| Workflow | Status | Run |
+| --- | --- | --- |
+| BlackBox Docs Check | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28297173344 |
+| WhiteBox Jest Tests | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28297190892 |
+| SwagStore CI/CD | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28297206056 |
+| Restful-Booker API Tests | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28297221621 |
+| OrangeHRM UI Automation | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28297236205 |
+| JMeter Performance Tests | Success | https://github.com/thanhtung2415/testing-personal-project/actions/runs/28298996720 |
