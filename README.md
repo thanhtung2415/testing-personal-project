@@ -38,44 +38,12 @@ Then open `http://localhost:3000`.
 
 ## GitHub Actions Evidence
 
-Use separate commits and pushes so the Actions tab shows progress over time.
+Submission evidence and local verification summary:
 
-Vietnamese step-by-step guide:
-
-- `docs/huong-dan-nop-bai.md`
-- `docs/github-push-schedule.md`
-- `docs/verification-results.md`
-- `docs/rubric-alignment-r-clo1.md`
 - `docs/submission-evidence.md`
+- `docs/verification-results.md`
 
-Recommended order:
-
-1. Push repository structure and BlackBox files.
-2. Push WhiteBox code and tests.
-3. Push SwagStore code, Jest tests, and CI/CD workflow.
-4. Push Restful-Booker API testing collection.
-5. Push OrangeHRM UI automation tests.
-6. Push JMeter performance test plan and report workflow.
-
-## Deployment Notes
-
-For the SwagStore assignment, connect this repository to Render or Railway.
-
-Render option:
-
-1. Create a new Web Service from the GitHub repository.
-2. Set build command: `npm install`.
-3. Set start command: `npm run start:swagstore`.
-4. Enable auto deploy from the `main` branch.
-5. Optionally add a GitHub secret named `RENDER_DEPLOY_HOOK_URL` so the workflow can trigger deployment after tests pass.
-
-Railway option:
-
-1. Create a new Railway project from the GitHub repository.
-2. Set start command: `npm run start:swagstore`.
-3. Enable automatic deployments from GitHub.
-
-Fill in these links after deployment:
+## Project Links
 
 - GitHub repository: https://github.com/thanhtung2415/testing-personal-project
 - GitHub Actions: https://github.com/thanhtung2415/testing-personal-project/actions
