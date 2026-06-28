@@ -49,3 +49,13 @@ https://swagstore-testing-demo.onrender.com/api/health
 ```
 
 The health check endpoint returns `status: ok` and `service: swagstore`.
+
+## Deployment Screenshots
+
+SwagStore live site:
+
+![SwagStore deployed website](images/swagstore-live.png)
+
+Health check endpoint:
+
+![SwagStore health check endpoint](images/swagstore-health-check.png)

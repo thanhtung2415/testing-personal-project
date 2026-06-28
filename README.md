@@ -82,6 +82,16 @@ Fill in these links after deployment:
 - Render deployment: https://swagstore-testing-demo.onrender.com
 - Render health check: https://swagstore-testing-demo.onrender.com/api/health
 
+## Deployment Evidence
+
+SwagStore live site:
+
+![SwagStore deployed website](docs/images/swagstore-live.png)
+
+Health check endpoint:
+
+![SwagStore health check endpoint](docs/images/swagstore-health-check.png)
+
 ## Verified GitHub Actions Runs
 
 | Workflow | Status | Run |
