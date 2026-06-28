@@ -58,4 +58,4 @@ SwagStore live site:
 
 Health check endpoint:
 
-![SwagStore health check endpoint](images/swagstore-health-check.png)
+![SwagStore health check endpoint](images/swagstore-health-check-clean.png)

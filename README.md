@@ -90,7 +90,7 @@ SwagStore live site:
 
 Health check endpoint:
 
-![SwagStore health check endpoint](docs/images/swagstore-health-check.png)
+![SwagStore health check endpoint](docs/images/swagstore-health-check-clean.png)
 
 ## Verified GitHub Actions Runs
 
