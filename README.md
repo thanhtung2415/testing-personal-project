@@ -79,7 +79,8 @@ Fill in these links after deployment:
 
 - GitHub repository: https://github.com/thanhtung2415/testing-personal-project
 - GitHub Actions: https://github.com/thanhtung2415/testing-personal-project/actions
-- Render/Railway deployment: pending setup in Render or Railway
+- Render deployment: https://swagstore-testing-demo.onrender.com
+- Render health check: https://swagstore-testing-demo.onrender.com/api/health
 
 ## Verified GitHub Actions Runs
 

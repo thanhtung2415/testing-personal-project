@@ -36,4 +36,16 @@ https://github.com/thanhtung2415/testing-personal-project/actions
 
 ## Deployment
 
-Render/Railway deployment is not linked yet. Add the real deployment URL after connecting the repository to Render or Railway.
+Render deployment:
+
+```text
+https://swagstore-testing-demo.onrender.com
+```
+
+Render health check:
+
+```text
+https://swagstore-testing-demo.onrender.com/api/health
+```
+
+The health check endpoint returns `status: ok` and `service: swagstore`.
